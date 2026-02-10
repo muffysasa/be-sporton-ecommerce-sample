@@ -10,7 +10,7 @@ export const createProduct = async (req: Request, res: Response): Promise<void> 
             productData.imageUrl = req.file.path
         }
 
-        const product = new productData(productData);
+        const product = new Product(productData);
         await product.save();
         res.status(201).json(product)
     } catch(error) {
